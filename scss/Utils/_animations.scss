@@ -1,0 +1,10 @@
+.fa-solid.fa-heart {
+  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
+  background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  opacity: 0;
+  transition: all 300ms;
+}
+input:checked + label .fa-solid.fa-heart {
+  opacity: 1;
+}
