@@ -5,3 +5,115 @@
 @import "../Layout/_header";
 @import "../Layout/_footer.scss"; 
 
+body {
+  background: white;
+}
+
+h1 {
+  @include font($font-shrikhand, 20px, 400);
+  @media screen and (min-width: 900px) {
+    @include font($font-shrikhand, 26px, 400);
+  }
+}
+
+h2 {
+  @include font($size: 16px, $weight: 300);
+}
+
+section {
+  @include flex(column, center, baseline, 10px);
+  width: 100%;
+  max-width: 634px;
+}
+
+form {
+  @include flex(column, center, center, 40px);
+  width: 100%;
+}
+
+span:nth-child(2) {
+  @include font($size: 13px, $weight: 300);
+}
+
+
+.header {
+  @include flex(row, space-between, center);
+  
+  & a {
+    color: inherit;
+  }
+  
+  & i {
+    font-size: 1.3rem;
+  }
+}
+
+main {
+  .banner-image {
+    width: 100%;
+    height: 100%;
+    max-height: 383px;
+  }
+
+  .main-container {
+    @include flex(column, center, center);
+    @include position(relative, -60px);
+    max-width: 1055px;
+    margin: 0 auto;
+    padding: 32px 13px 0;
+    border-radius: 40px 40px 0 0;
+    background-color: $bg-color-grey;
+
+    &_title {
+      @include position(relative, $left: -30px);
+      margin-bottom: 40px;
+      @include heart($top: -3px, $right: -60px);
+
+      @media screen and (min-width: 900px) {
+        @include heart($top: 2px, $right: -60px);
+      }
+    }
+
+    .menu {
+      .underline {
+        width: 40px;
+        height: 3px;
+        background-color: $color-green;
+      }
+
+      &_cards {
+        @include position(relative);
+        width: 100%;
+        max-width: 634px;
+        border-radius: 15px;
+        background-color: rgb(255, 255, 255);
+
+        & label {
+          @include flex(column, center, baseline, 5px);
+          @include position(relative);
+          padding: 13px 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+
+.gradient-button {
+  @include button(18px, 50px);
+  @include font($font-roboto, 1rem, 600);
+  display: block;
+  margin: 20px auto;
+  color: white;
+  border-radius: 50px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  }
+}
+
