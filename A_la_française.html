@@ -2,152 +2,218 @@
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>A la Française</title> 
-		<link rel="preconnect" href="https://fonts.googleapis.com"> 
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap" rel="stylesheet">  
-		<link rel="stylesheet" href="scss/Page/restaurants.css">                  
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>A la Française</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="scss/Page/restaurants.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 	</head>
-
-<!-- Faire en sorte que les entrées, plats et desserts s'affichent progressivement -->
-<!-- Ajouter un léger ombrage au survol sur les cartes des plats -->
-<!-- Afficher une coche lorsque l'utilisateur choisit son plat -->
- <!--Dans le header faire en sorte que la flèche ramene à l'accueil-->
-
-
-
-<body>
-	<div class="loader">
-      <div class="loader__spinner"></div>
-        <p class="loader__text">OhMyfood prépare vos plats...</p>
-    </div>
-	<header class="header">
-		<i class="fa-solid fa-arrow-left"></i>    
-		<img class="header_logo"src="Images et textes Ohmyfood/images/logo/ohmyfood.png" alt="ohmyfood">
-	</header>
-	<main>
-		<img class="banner-image" src="Images et textes Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="image-restaurants-à-la-française"> 
-		<div class="main-container">
-			<div class="main-container_title">
-				<h1>A la Française</h1>
-				<input type="checkbox" name="heart" id="heart">
-				<label for="heart">
-					<i class="fa-regular fa-heart"></i>
-					<i class="fa-solid fa-heart"></i>
-				</label>
-			</div>
-			<form class="menu" action="#" method="get">
-				<section class="entrees">
-					<h2>ENTRÉES</h2>
-					<div class="underline"></div>
-					<div class="menu_cards">
-						<input type="checkbox" name="entree1" id="entree1" />
-						<label for="entree1">
-							<span><strong>Tartare de poulpe acidulé</strong></span>
-							<span>Aux zestes d'orange</span>
-						</label>
-
-						<!--refaire prix pour animation-->
-
-
-
-					</div>
-					<div class="menu_cards">
-						<input type="checkbox" name="entree2" id="entree2" />
-						<label for="entree2">
-							<span><strong>Velouté de légumes d'antan</strong></span>
-							<span>Carotte, panais, topinambour</span>
-						</label>
-						<!--refaire prix pour animation-->
-					</div>
-					<div class="menu_cards">
-						<input type="checkbox" name="entree3" id="entree3" />
-						<label for="entree3">
-							<span><strong>Soupe à l'oignon</strong></span>
-							<span>Revisitée</span>
-						</label>
-						<!--refaire prix pour animation-->
-					</div>
-				</section>
-				<section class="plats">
-					<h2>PLATS</h2>
-					<div class="underline"></div>
-					<div class="menu_cards">
-						<input type="checkbox" name="plat1" id="plat1" />
-						<label for="plat1">
-							<span><strong>Coquilles Saint-Jacques</strong></span>
-							<span>Accompagnées d'une purée de panais</span>
-						</label>
-						<!--refaire prix pour animation-->
-					</div>
-					<div class="menu_cards">
-						<input type="checkbox" name="plat2" id="plat2" />
-						<label for="plat2">
-							<span><strong>Magret de canard</strong></span>
-							<span>Et parmentier de pommes de terre</span>
-						</label>
-						<!--refaire prix pour animation-->
-					</div>
-					<div class="menu_cards">
-						<input type="checkbox" name="plat3" id="plat3" />
-						<label for="plat3">
-							<span><strong>Pigeonneau d’Ille-et-Vilaine</strong></span>
-							<span>Sur son lit de gnocchis aux légumes</span>
-						</label>
-						<!--refaire prix pour animation-->
-					</div>
-				</section>
-				<section class="desserts">
-					<h2>DESSERTS</h2>
-					<div class="underline"></div>
-					<div class="menu_cards">
-						<input type="checkbox" name="dessert1" id="dessert1" />
-						<label for="dessert1">
-							<span><strong>Pétales de violettes glacés</strong></span>
-							<span>Et purée de noisettes</span>
-						</label>
-						<!--refaire prix pour animation-->
-					</div>
-					<div class="menu_cards">
-						<input type="checkbox" name="dessert2" id="dessert2" />
-						<label for="dessert2">
-							<span><strong>Fondant au chocolat</strong></span>
-							<span>Revisité</span>
-						</label>
-						<!--refaire prix pour animation-->
-					</div>
-					<div class="menu_cards">
-						<input type="checkbox" name="dessert3" id="dessert3" />
-						<label for="dessert3">
-							<span><strong>Millefeuille croustillant</strong></span>
-							<span>Myrtilles et pâte d’amande</span>
-						</label>
-						<!--refaire prix pour animation-->
-					</div>
-				</section>
-				<input class="gradient-button" type="submit" value="Commander" />
-			</form>
-		</div>
-	</main>
-<footer class="footer">
-	<h1 class="footer_logo">ohmyfood</h1>
-	<ul class="footer_links">
-		<li>
-			<a href="#"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a>
-		</li>
-		<li>
-			<a href="#"><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</a>
-		</li>
-		<li>
-			<a href="#"> Mentions légales </a>
-		</li>
-		<li>
-			<a href="#"> Contact </a>
-		</li>
-	</ul>
-</footer>
-</body>
-</html>
-
+	<body>
+		<header class="header">
+			<a href="index.html" class="fa-solid fa-arrow-left"></a>
+			<img class="header_logo" src="Images et textes Ohmyfood/images/logo/ohmyfood.png" alt="ohmyfood">
+		</header>
+		<main>
+			<img class="banner-image" src="Images et textes Ohmyfood/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="image-restaurants-à-la-française">
+			<div class="main-container">
+				<div class="main-container_title">
+					<h1>À la française</h1>
+					<input type="checkbox" name="heart" id="heart">
+					<label for="heart">
+						<i class="fa-regular fa-heart"></i>
+						<i class="fa-solid fa-heart"></i>
+					</label>
+				</div>
+				<form class="menu" action="#" method="get">
+					<section class="entrees">
+						<div class="section-title">
+							<h2>ENTRÉES</h2>
+							<div class="underline"></div>
+						</div>
+						<div class="menu_cards">
+							<input type="checkbox" name="entree1" id="entree1">
+							<label for="entree1">
+								<span><strong>Tartare de poulpe acidulé</strong></span>
+								<span>Aux zestes d'oranges</span>
+							</label>
+							<div class="menu_cards_slidebar">
+								<div class="menu_cards_slidebar_price">
+									<p>
+										25€
+									</p>
+								</div>
+								<div class="menu_cards_slidebar_icon">
+									<i class="fa-solid fa-circle-check"></i>
+								</div>
+							</div>
+						</div>
+						<div class="menu_cards">
+							<input type="checkbox" name="entree2" id="entree2">
+							<label for="entree2">
+								<span><strong>Velouté de légumes d'antan</strong></span>
+								<span>Carotte, panais, topinambour</span>
+							</label>
+							<div class="menu_cards_slidebar">
+								<div class="menu_cards_slidebar_price">
+									<p>
+										35€
+									</p>
+								</div>
+								<div class="menu_cards_slidebar_icon">
+									<i class="fa-solid fa-circle-check"></i>
+								</div>
+							</div>
+						</div>
+						<div class="menu_cards">
+							<input type="checkbox" name="entree3" id="entree3">
+							<label for="entree3">
+								<span><strong>Soupe à l'oignon</strong></span>
+								<span>Revisitée</span>
+							</label>
+							<div class="menu_cards_slidebar">
+								<div class="menu_cards_slidebar_price">
+									<p>
+										20€
+									</p>
+								</div>
+								<div class="menu_cards_slidebar_icon">
+									<i class="fa-solid fa-circle-check"></i>
+								</div>
+							</div>
+              </div>
+						</section>
+						<section class="plats">
+							<div class="section-title">
+								<h2>PLATS</h2>
+								<div class="underline"></div>
+							</div>
+							<div class="menu_cards">
+								<input type="checkbox" name="plat1" id="plat1">
+								<label for="plat1">
+									<span><strong>Coquilles Saint-Jacques</strong></span>
+									<span>Accompagnées d'une purée de panais</span>
+								</label>
+								<div class="menu_cards_slidebar">
+									<div class="menu_cards_slidebar_price">
+										<p>
+											40€
+										</p>
+									</div>
+									<div class="menu_cards_slidebar_icon">
+										<i class="fa-solid fa-circle-check"></i>
+									</div>
+								</div>
+							</div>
+							<div class="menu_cards">
+								<input type="checkbox" name="plat2" id="plat2">
+								<label for="plat2">
+									<span><strong>Magret de canard</strong></span>
+									<span>Et parmentier de pommes de terre</span>
+								</label>
+								<div class="menu_cards_slidebar">
+									<div class="menu_cards_slidebar_price">
+										<p>
+											35€
+										</p>
+									</div>
+									<div class="menu_cards_slidebar_icon">
+										<i class="fa-solid fa-circle-check"></i>
+									</div>
+								</div>
+							</div>
+							<div class="menu_cards">
+								<input type="checkbox" name="plat3" id="plat3">
+								<label for="plat3">
+									<span><strong>Pigeonneau d’Ille-et-Vilaine</strong></span>
+									<span>Sur son lit de gnocchis aux légumes</span>
+								</label>
+								<div class="menu_cards_slidebar">
+									<div class="menu_cards_slidebar_price">
+										<p>
+											44€
+										</p>
+									</div>
+									<div class="menu_cards_slidebar_icon">
+										<i class="fa-solid fa-circle-check"></i>
+									</div>
+								</div>
+							</div>
+						</section>
+						<section class="desserts">
+							<div class="section-title">
+								<h2>DESSERTS</h2>
+								<div class="underline"></div>
+							</div>
+							<div class="menu_cards">
+								<input type="checkbox" name="dessert1" id="dessert1">
+								<label for="dessert1">
+									<span><strong>Pétales de violettes glacés</strong></span>
+									<span>Et purée de noisettes</span>
+								</label>
+								<div class="menu_cards_slidebar">
+									<div class="menu_cards_slidebar_price">
+										<p>
+											18€
+										</p>
+									</div>
+									<div class="menu_cards_slidebar_icon">
+										<i class="fa-solid fa-circle-check"></i>
+									</div>
+								</div>
+							</div>
+							<div class="menu_cards">
+								<input type="checkbox" name="dessert2" id="dessert2">
+								<label for="dessert2">
+									<span><strong>Fondant au chocolat</strong></span>
+									<span>Revisité</span>
+								</label>
+								<div class="menu_cards_slidebar">
+									<div class="menu_cards_slidebar_price">
+										<p>
+											22€
+										</p>
+									</div>
+									<div class="menu_cards_slidebar_icon">
+										<i class="fa-solid fa-circle-check"></i>
+									</div>
+								</div>
+							</div>
+							<div class="menu_cards">
+								<input type="checkbox" name="dessert3" id="dessert3">
+								<label for="dessert3">
+									<span><strong>Millefeuille croustillant</strong></span>
+									<span>Myrtilles et pâte d’amande</span>
+								</label>
+								<div class="menu_cards_slidebar">
+									<div class="menu_cards_slidebar_price">
+										<p>
+											23€
+										</p>
+									</div>
+									<div class="menu_cards_slidebar_icon">
+										<i class="fa-solid fa-circle-check"></i>
+									</div>
+								</div>
+							</div>
+						</section>
+						<input class="gradient-button" type="submit" value="Commander">
+					</form>
+				</div>
+			</main>
+			<footer class="footer">
+				<h1 class="footer_logo">ohmyfood</h1>
+				<ul class="footer_links">
+					<li>
+						<a href="#"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a>
+					</li>
+					<li>
+						<a href="#"><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</a>
+					</li>
+					<li><a href="#"> Mentions légales </a></li>
+					<li><a href="#"> Contact </a></li>
+				</ul>
+			</footer>
+		</body>
+	</html>
