@@ -259,12 +259,26 @@ main .link-restaurants p {
   margin: 20px 0 30px;
   width: 90%;
 }
-main .link-restaurants .gradient-button {
-  padding: 13px 19px;
+main .gradient-button {
+  padding: 18px 25px;
   background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
   border-radius: 25px;
   border: none;
   cursor: pointer;
+  font-family: "Roboto";
+  font-size: 1rem;
+  font-weight: 400;
+  display: block;
+  margin: 20px auto;
+  color: white;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+main .gradient-button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
 }
 main .how-it-works {
   display: flex;
@@ -313,7 +327,7 @@ main .how-it-works_container_table_list {
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1490196078);
   border-radius: 20px;
   width: 100%;
-  padding: 30px 0px 30px 30px;
+  padding: 30px 0 30px 30px;
   margin-left: 12px;
 }
 main .how-it-works_container_table_list_content {
@@ -468,4 +482,33 @@ main .restaurants_container_box_card_content_text {
   justify-content: center;
   align-items: baseline;
   gap: 5px;
+}
+
+.restaurants_container_box_card {
+  position: relative;
+}
+.restaurants_container_box_card label {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.restaurants_container_box_card label i.fa-solid {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.restaurants_container_box_card label i.fa-regular {
+  transition: opacity 0.3s ease;
+}
+.restaurants_container_box_card:hover label i.fa-solid {
+  opacity: 1;
+}
+.restaurants_container_box_card:hover label i.fa-regular {
+  opacity: 0;
+}
+.restaurants_container_box_card input[type=checkbox]:checked + label i.fa-solid {
+  opacity: 1;
+}
+.restaurants_container_box_card input[type=checkbox]:checked + label i.fa-regular {
+  opacity: 0;
 }
