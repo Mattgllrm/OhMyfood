@@ -76,24 +76,6 @@ input:checked + label .fa-solid.fa-heart {
     transform: translateY(0);
   }
 }
-.entrees {
-  opacity: 0;
-  animation: fadeInUp 0.6s forwards;
-  animation-delay: 0s;
-}
-
-.plats {
-  opacity: 0;
-  animation: fadeInUp 0.6s forwards;
-  animation-delay: 1s;
-}
-
-.desserts {
-  opacity: 0;
-  animation: fadeInUp 0.6s forwards;
-  animation-delay: 2s;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -203,12 +185,16 @@ footer .footer_logo {
 
 body {
   background: white;
+  min-width: 320px;
 }
 
 h1 {
   font-family: "Shrikhand";
   font-size: 27px;
   font-weight: 400;
+  text-align: center;
+  white-space: normal;
+  margin: 0 auto;
 }
 @media screen and (min-width: 900px) {
   h1 {
@@ -228,7 +214,8 @@ h2 {
 .section-title {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: initial;
   gap: 5px;
 }
 
@@ -423,12 +410,23 @@ main .main-container .menu_cards label {
   opacity: 1;
   transform: scale(1);
 }
-.menu_cards label {
+.menu_cards label .menu_cards_content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 13px 10px;
-  cursor: pointer;
+  gap: 5px;
+  width: calc(100% - 35px);
+  transition: width 0.3s ease;
+}
+.menu_cards label .menu_cards_content span {
+  display: block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.3s ease;
+}
+.menu_cards input[type=checkbox]:checked + label .menu_cards_content {
+  width: calc(100% - 90px);
 }
 .menu_cards .menu_cards_slidebar {
   position: absolute;
@@ -442,7 +440,7 @@ main .main-container .menu_cards label {
   transition: background-color 0.3s ease;
 }
 .menu_cards .menu_cards_slidebar_price {
-  width: 85px;
+  width: 60px;
   text-align: right;
   padding: 30px 15px 15px 20px;
   color: black;

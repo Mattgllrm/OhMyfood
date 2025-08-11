@@ -7,6 +7,7 @@
 
 body {
   background: white;
+  min-width: 320px;
 }
 
 h1 {
@@ -23,10 +24,7 @@ h2 {
 }
 
 .section-title {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 5px;
+  @include flex(column, flex-start, initial, 5px);
 }
 
 .underline {
@@ -65,7 +63,7 @@ main {
 
   .main-container {
     @include flex(column, center, center);
-    @include position(relative, -60px);
+    @include position(relative, -60px, null, null, null);
     max-width: 1055px;
     margin: 0 auto;
     padding: 32px 13px 0;
@@ -73,16 +71,16 @@ main {
     background-color: $bg-color-grey;
 
     &_title {
-      @include position(relative, $left: -30px);
+      @include position(relative, null, -30px, null, null);
       margin-bottom: 40px;
-      @include heart($top: 6px, $right: -60px);
+      @include heart(6px, -60px, null, null);
 
       label {
-        width: 50px;        
+        width: 50px;
       }
 
       @media screen and (min-width: 900px) {
-        @include heart($top: 2px, $right: -60px);
+        @include heart(2px, -60px, null, null);
       }
     }
 
@@ -100,7 +98,7 @@ main {
         &:hover {
           box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 
-          // Affiche la barre verte et la coche au hover
+          
           .menu_cards_slidebar {
             background-color: $color-green;
           }
@@ -155,13 +153,13 @@ main {
   &:hover {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 
-    // Affiche la barre verte et la coche au hover
+    
     .menu_cards_slidebar {
       background-color: $color-green;
     }
     .menu_cards_slidebar_price {
       transform: translateX(-60px);
-      color: black ;
+      color: black;
     }
     .menu_cards_slidebar_icon {
       opacity: 1;
@@ -170,11 +168,27 @@ main {
   }
 
   label {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 13px 10px;
-    cursor: pointer;
+    .menu_cards_content {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;       
+      width: calc(100% - 35px);
+      transition: width 0.3s ease;
+    }
+
+    .menu_cards_content span {
+      display: block;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: all 0.3s ease;
+    }
+  }
+
+  
+  input[type="checkbox"]:checked + label .menu_cards_content {
+    width: calc(100% - 90px); 
   }
 
   .menu_cards_slidebar {
@@ -190,7 +204,7 @@ main {
   }
 
   .menu_cards_slidebar_price {
-    width: 85px;
+    width: 60px;
     text-align: right;
     padding: 30px 15px 15px 20px;
     color: black;
@@ -216,14 +230,14 @@ main {
     transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
-  // Au clic (checkbox checked) ça reste affiché
+  
   input[type="checkbox"]:checked + label + .menu_cards_slidebar {
     background-color: $color-green;
   }
 
   input[type="checkbox"]:checked + label + .menu_cards_slidebar .menu_cards_slidebar_price {
     transform: translateX(-60px);
-    color: black ;
+    color: black;
   }
 
   input[type="checkbox"]:checked + label + .menu_cards_slidebar .menu_cards_slidebar_icon {
@@ -261,9 +275,8 @@ section {
   position: relative;
 
   input[type="checkbox"] {
-    display: none; // cache la checkbox
+    display: none;
 
-    
     &:checked + label i.fa-solid {
       opacity: 1;
     }
@@ -286,12 +299,11 @@ section {
 
     i.fa-regular {
       position: absolute;
-      color: black; 
+      color: black;
       opacity: 1;
       transition: opacity 0.3s ease;
     }
 
-    
     &:hover i.fa-solid {
       opacity: 1;
     }

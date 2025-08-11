@@ -230,7 +230,7 @@ main {
     }
   }
 
-  // Lorsqu'on survole la carte, le cœur plein apparaît temporairement
+  
   &:hover label i.fa-solid {
     opacity: 1;
   }
@@ -239,7 +239,7 @@ main {
     opacity: 0;
   }
 
-  // Lorsqu'on clique, le cœur reste plein
+  
   input[type="checkbox"]:checked + label {
     i.fa-solid {
       opacity: 1;
