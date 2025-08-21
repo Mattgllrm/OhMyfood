@@ -183,6 +183,10 @@ footer .footer_logo {
   gap: 10px;
 }
 
+body {
+  min-width: 380px;
+}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -254,13 +258,15 @@ main .gradient-button {
   margin: 20px auto;
   color: white;
   border-radius: 50px;
+  background: linear-gradient(180deg, #9356DC 0%, #FF79DA 100%);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
   cursor: pointer;
 }
 main .gradient-button:hover {
   transform: scale(1.03);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(193.33deg, rgb(168.6, 119.8, 227) -11.44%, rgb(255, 161.8, 229.2656716418) 123.93%);
 }
 main .how-it-works {
   display: flex;
@@ -283,7 +289,6 @@ main .how-it-works_container {
   align-items: baseline;
   gap: 25px;
   width: 100%;
-  max-width: 335px;
 }
 @media screen and (min-width: 900px) {
   main .how-it-works_container {
@@ -327,7 +332,7 @@ main .how-it-works_container_table_list_content_numbers {
   gap: 0;
   position: absolute;
   top: 27px;
-  left: -12px;
+  left: 10px;
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -336,7 +341,7 @@ main .how-it-works_container_table_list_content_numbers {
 }
 main .how-it-works_container_table_list i {
   position: absolute;
-  left: 30px;
+  left: 50px;
   color: #7e7e7e;
   width: 20px;
 }
@@ -349,12 +354,8 @@ main .restaurants {
   justify-content: center;
   align-items: center;
   gap: 30px;
-  padding: 55px 20px;
-}
-@media screen and (min-width: 900px) {
-  main .restaurants {
-    padding: 50px 100px 70px;
-  }
+  padding: 55px 0;
+  margin: 0px 20px;
 }
 main .restaurants_container {
   display: flex;
@@ -363,7 +364,7 @@ main .restaurants_container {
   align-items: baseline;
   gap: 15px;
   width: 100%;
-  max-width: 490px;
+  max-width: none;
 }
 @media screen and (min-width: 900px) {
   main .restaurants_container {
@@ -426,9 +427,10 @@ main .restaurants_container_box label .fa-solid.fa-heart {
 main .restaurants_container_box_card {
   position: relative;
   width: 100%;
-  max-width: 490px;
+  max-width: none;
   background-color: white;
   border-radius: 15px;
+  margin-bottom: 20px;
 }
 main .restaurants_container_box_card a {
   width: 100%;
@@ -436,9 +438,11 @@ main .restaurants_container_box_card a {
 }
 main .restaurants_container_box_card a img {
   width: 100%;
-  max-width: 490px;
+  max-width: 100%;
   height: 174px;
   border-radius: 15px 15px 0 0;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 main .restaurants_container_box_card_new {
   position: absolute;
@@ -465,32 +469,31 @@ main .restaurants_container_box_card_content_text {
   align-items: baseline;
   gap: 5px;
 }
-
-.restaurants_container_box_card {
+main .restaurants_container_box_card {
   position: relative;
 }
-.restaurants_container_box_card label {
+main .restaurants_container_box_card label {
   position: absolute;
   bottom: 20px;
   right: 20px;
   cursor: pointer;
 }
-.restaurants_container_box_card label i.fa-solid {
+main .restaurants_container_box_card label i.fa-solid {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-.restaurants_container_box_card label i.fa-regular {
+main .restaurants_container_box_card label i.fa-regular {
   transition: opacity 0.3s ease;
 }
-.restaurants_container_box_card:hover label i.fa-solid {
+main .restaurants_container_box_card:hover label i.fa-solid {
   opacity: 1;
 }
-.restaurants_container_box_card:hover label i.fa-regular {
+main .restaurants_container_box_card:hover label i.fa-regular {
   opacity: 0;
 }
-.restaurants_container_box_card input[type=checkbox]:checked + label i.fa-solid {
+main .restaurants_container_box_card input[type=checkbox]:checked + label i.fa-solid {
   opacity: 1;
 }
-.restaurants_container_box_card input[type=checkbox]:checked + label i.fa-regular {
+main .restaurants_container_box_card input[type=checkbox]:checked + label i.fa-regular {
   opacity: 0;
 }

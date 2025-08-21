@@ -5,6 +5,10 @@
 @import "../Layout/_header";
 @import "../Layout/_footer.scss";
 
+body {
+  min-width: 380px;
+}
+
 .header {
   @include flex(row, center, center);
 }
@@ -56,21 +60,27 @@ main {
   }
 
   .gradient-button {
-    @include button(18px, 25px);
-    @include font($font-roboto, 1rem);
-    display: block;
-    margin: 20px auto;
-    color: white;
-    border-radius: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    cursor: pointer;
+  @include button(18px, 25px);
+  @include font($font-roboto, 1rem);
+  display: block;
+  margin: 20px auto;
+  color: white;
+  border-radius: 50px;
+  background: linear-gradient(180deg, #9356DC 0%, #FF79DA 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+  cursor: pointer;
 
-    &:hover {
-      transform: scale(1.03);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-    }
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(
+      193.33deg,
+      lighten(#9356DC, 8%) -11.44%,
+      lighten(#FF79DA, 8%) 123.93%
+    );
   }
+}
 
   .how-it-works {
     @include flex(column, center, center, 25px);
@@ -84,7 +94,7 @@ main {
     &_container {
       @include flex(column, center, baseline, 25px);
       width: 100%;
-      max-width: 335px;
+      //max-width: 335px;
 
       @media screen and (min-width: 900px) {
         max-width: 1050px;
@@ -112,7 +122,7 @@ main {
 
             &_numbers {
               @include flex(row, center, center);
-              @include position(absolute, 27px, -12px);
+              @include position(absolute, 27px, 10px);
               width: 24px;
               height: 24px;
               border-radius: 50%;
@@ -122,7 +132,7 @@ main {
           }
 
           i {
-            @include position(absolute, $left: 30px);
+            @include position(absolute, $left: 50px);
             color: $icon-color;
             width: 20px;
           }
@@ -136,74 +146,72 @@ main {
   }
 
   .restaurants {
-    @include flex(column, center, center, 30px);
-    padding: 55px 20px;
+  @include flex(column, center, center, 30px);
+  padding: 55px 0; 
+  margin: 0px 20px;
+
+  &_container {
+    @include flex(column, center, baseline, 15px);
+    width: 100%;
+    max-width: none; 
 
     @media screen and (min-width: 900px) {
-      padding: 50px 100px 70px;
+      @include flex(column, center, baseline, 50px);
+      max-width: calc(490px * 2 + 100px); 
     }
 
-    &_container {
-      @include flex(column, center, baseline, 15px);
-      width: 100%;
-      max-width: 490px;
+    &_title {
+      margin-bottom: 20px;
 
       @media screen and (min-width: 900px) {
-        @include flex(column, center, baseline, 50px);
-        max-width: calc(490px * 2 + 100px);
+        margin-bottom: -25px;
+      }
+    }
+
+    &_box {
+      @include flex(column, center, baseline, 15px);
+      width: 100%;
+      @include heart($bottom: 20px, $right: 20px);
+
+      @media screen and (min-width: 900px) {
+        @include flex(row, center, baseline, 100px);
       }
 
-      &_title {
+      &_card {
+        @include position(relative);
+        width: 100%; 
+        max-width: none; 
+        background-color: white;
+        border-radius: 15px;
         margin-bottom: 20px;
 
-        @media screen and (min-width: 900px) {
-          margin-bottom: -25px;
-        }
-      }
-
-      &_box {
-        @include flex(column, center, baseline, 15px);
-        width: 100%;
-        @include heart($bottom: 20px, $right: 20px);
-
-        @media screen and (min-width: 900px) {
-          @include flex(row, center, baseline, 100px);
-        }
-
-        &_card {
-          @include position(relative);
+        a {
           width: 100%;
-          max-width: 490px;
-          background-color: white;
-          border-radius: 15px;
+          color: inherit;
 
-          a {
-            width: 100%;
-            color: inherit;
-
-            img {
-              width: 100%;
-              max-width: 490px;
-              height: 174px;
-              border-radius: 15px 15px 0 0;
-            }
+          img {
+            width: 100%;      
+            max-width: 100%;   
+            height: 174px;
+            border-radius: 15px 15px 0 0;
+            object-fit: cover; 
           }
+        }
 
-          &_new {
-            @include position(absolute, 10px, null, 10px, null);
-            @include font(null, 14px, 500);
-            background-color: $color-green;
-            color: $color-text-green;
-            padding: 6px 9px;
-          }
+        &_new {
+          @include position(absolute, 10px, null, 10px, null);
+          @include font(null, 14px, 500);
+          background-color: $color-green;
+          color: $color-text-green;
+          padding: 6px 9px;
+        }
 
-          &_content {
-            @include flex(row, space-between, center);
-            padding: 13px 25px 13px 13px;
+        &_content {
+          @include flex(row, space-between, center);
+          padding: 13px 25px 13px 13px;
 
-            &_text {
-              @include flex(column, center, baseline, 5px);
-            }
+          &_text {
+            @include flex(column, center, baseline, 5px);
           }
         }
       }
@@ -249,4 +257,6 @@ main {
       opacity: 0;
     }
   }
+}
+
 }
