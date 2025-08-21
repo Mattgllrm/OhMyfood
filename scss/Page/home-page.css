@@ -247,7 +247,7 @@ main .link-restaurants p {
 }
 main .gradient-button {
   padding: 18px 25px;
-  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
+  background: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
   border-radius: 25px;
   border: none;
   cursor: pointer;
@@ -258,7 +258,6 @@ main .gradient-button {
   margin: 20px auto;
   color: white;
   border-radius: 50px;
-  background: linear-gradient(180deg, #9356DC 0%, #FF79DA 100%);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
   cursor: pointer;
@@ -266,7 +265,7 @@ main .gradient-button {
 main .gradient-button:hover {
   transform: scale(1.03);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(193.33deg, rgb(168.6, 119.8, 227) -11.44%, rgb(255, 161.8, 229.2656716418) 123.93%);
+  background: linear-gradient(180deg, rgb(255, 161.8, 229.2656716418) 0%, rgb(168.6, 119.8, 227) 100%);
 }
 main .how-it-works {
   display: flex;

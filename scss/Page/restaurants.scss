@@ -190,7 +190,7 @@ main {
   margin: 20px auto;
   color: white;
   border-radius: 50px;
-  background: linear-gradient(180deg, #9356DC 0%, #FF79DA 100%);
+  background: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
   cursor: pointer;
@@ -198,7 +198,7 @@ main {
   &:hover {
     transform: scale(1.03);
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(180deg, lighten(#9356DC, 8%) 0%, lighten(#FF79DA, 8%) 100%);
+    background: linear-gradient(180deg, lighten(#FF79DA, 8%) 0%, lighten(#9356DC, 8%) 100%);
   }
 }
 

@@ -12,7 +12,7 @@
 }
 @mixin button($topBot, $side) {       
   padding: $topBot $side;
-  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
+  background: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
   border-radius: 25px;
   border: none;
   cursor: pointer;
